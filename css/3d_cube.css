@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cube{
+    margin: 200px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border: 3px solid black;
+    /* transform: rotateX(20deg) rotateY(-20deg); */
+    transform-style: preserve-3d;
+    perspective: 2000px;
+    animation: rotate 5s ease-in-out 2s infinite alternate none;   
+}
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 1s;
+}
+.one{
+    background-color: lightblue;
+}
+.two{
+    background-color: lightcoral;
+    transform: rotateY(90deg) translateZ(-100px) translateX(-100px);
+}
+.three{
+    background-color: lightseagreen;
+    transform: rotateY(90deg) translateZ(100px) translateX(-100px);
+}
+.four{
+    background-color: lightgoldenrodyellow;
+    transform: translateZ(200px);
+}
+.five{
+    background-color: lightpink;
+    transform: rotateX(90deg) translateZ(-100px) translateY(100px);
+}
+.six{
+    background-color: lightsalmon;
+    transform: rotateX(90deg) translateZ(100px) translateY(100px);   
+}
+@keyframes rotate {
+    from{
+        transform: rotate3d(0);
+    }
+    to{
+        transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+    }
+}
